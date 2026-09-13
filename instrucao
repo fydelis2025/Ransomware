@@ -1,0 +1,8 @@
+# Compilar o descriptografador
+nasm -f elf64 decrypt_demo.asm -o decrypt_demo.o
+ld decrypt_demo.o -o decrypt_demo
+
+# Uso completo:
+echo "Meu arquivo de teste" > documento.txt
+./ransom_demo documento.txt     # → vira documento.txt.locked
+./decrypt_demo documento.txt.locked  # → volta a ser documento.txt
